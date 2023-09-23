@@ -35,7 +35,7 @@ $ git commit -m "lab-finished"
 $ git push origin <branch-name>
 ```
 
-The instructional team will review your branch and provide feedback.
+The instructional team will review your branch and provide feedback.Hola!
 
 **To work on the subsequent assignments**, create a new branch for every new assignment.
 
