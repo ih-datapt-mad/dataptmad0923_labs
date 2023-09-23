@@ -1,2 +1,1 @@
-<<<<<<< HEAD
-print("This is the final message")   
+print("This is the main message")   
