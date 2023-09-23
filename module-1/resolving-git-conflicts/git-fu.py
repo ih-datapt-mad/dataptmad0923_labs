@@ -1,1 +1,1 @@
-print("This is the altered message")
+print("This is the main message")
