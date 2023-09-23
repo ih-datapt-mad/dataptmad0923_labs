@@ -1,1 +1,0 @@
-print("Please generate a conflict")
