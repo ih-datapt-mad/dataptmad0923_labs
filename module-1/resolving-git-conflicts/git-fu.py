@@ -1,1 +1,1 @@
-print("This is the main message")
+print("Please generate a conflict")
