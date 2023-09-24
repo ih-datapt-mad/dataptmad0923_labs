@@ -2,4 +2,4 @@ My name is Silvia Martínez Valero and I am from Madrid. I was recently working 
 
 I am here to change my career and to be able to grow and achieve new things. I knew someone who took one of ironhack's bootcamps and I decided to join this adventure too. I expect to lear whatever is necessary to be able to work in data and have a good career. 
 
-After the bootcamp I expect to find a job and start my new path. I have been many years working in hostelry, so I am looking for a change (and, above all, an opportunity) in a company that values its employees and allows me to grow and explore my full potential. 
+After the bootcamp I expect to find a job and start my new path. I have been many years working in hostelry, so I am looking for a change (and, above all, an opportunity) in a company that values its employees and allows me to grow and explore my full potential.
