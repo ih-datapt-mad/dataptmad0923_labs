@@ -13,4 +13,4 @@
 
 * Which industry will you seek employment in? Data
 * What will your future role look like? Data analysis in companies that  ahve interesting data management
-* What is your career goal? Become a competent tech professional
+* What is your career goal? Become a competent tech professional and access better job opportunities
