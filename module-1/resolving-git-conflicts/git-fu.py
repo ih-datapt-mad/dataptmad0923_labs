@@ -1,1 +1,1 @@
-print('this is the main message')
+print('this is the conflict solving message')
