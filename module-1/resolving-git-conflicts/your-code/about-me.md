@@ -1,1 +1,2 @@
-This is an introduction about me
+This is an introduction about me.
+Conflict solved
