@@ -1,0 +1,1 @@
+print("this is the MASTER OF PUPPETS message")
