@@ -12,8 +12,10 @@ code simplicity and efficiency.
 print('Welcome to this calculator!')
 print('It can add and subtract whole numbers from zero to five')
 a = input('Please choose your first number (zero to five): ')
+print("Primer cambio")
 b = input('What do you want to do? plus or minus: ')
 c = input('Please choose your second number (zero to five): ')
+
 
 if a == 'zero' and b == 'plus'  and c == 'zero':
     print("zero plus zero equals zero")
