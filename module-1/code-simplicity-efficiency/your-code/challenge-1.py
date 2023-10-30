@@ -8,7 +8,7 @@ expects.
 The code is very long and messy. Refactor it according to what you have learned about
 code simplicity and efficiency.
 """
-
+#PARA HACER LA PR
 print('Welcome to this calculator!')
 print('It can add and subtract whole numbers from zero to five')
 a = input('Please choose your first number (zero to five): ')
