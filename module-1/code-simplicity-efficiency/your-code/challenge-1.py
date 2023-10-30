@@ -3,10 +3,10 @@ This is a dumb calculator that can add and subtract whole numbers from zero to f
 When you run the code, you are prompted to enter two numbers (in the form of English
 word instead of number) and the operator sign (also in the form of English word).
 The code will perform the calculation and give the result if your input is what it
-expects.
+expects..
 
 The code is very long and messy. Refactor it according to what you have learned about
-code simplicity and efficiency.
+code simplicity and efficiency..
 """
 
 print('Welcome to this calculator!')
