@@ -7,3 +7,4 @@ def triangle(max_len):
     return m
 max_len = int(input("What is the maximal length of the triange side? "))
 print(f"The longest length possible for a side of this triange is {triangle(max_len)}")
+
