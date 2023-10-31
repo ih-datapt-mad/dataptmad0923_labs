@@ -20,7 +20,7 @@ def calc():
     if b == '+':
         b = 'plus'
     if b == '-':
-        d = 'minus'
+        b = 'minus'
     c = input('Please choose your second number (zero to five): ')
     if int(c) in d3.keys():
         c = d3[int(c)]
@@ -31,7 +31,7 @@ def calc():
     if b == 'plus':
         print(f'{a} {b} {c} equals {d3[d1[a] + d1[c]]}')
     if b == 'minus':
-        print(f'{a} {b} {c} equals {d3[d1[a] - d1[c]]}') 
+        print(f'{a} {b} {c} equals ' + 'negative ' * (d1[a] - d1[c] < 0) + d3[abs(d1[a] - d1[c])]) 
         
     print("Thanks for using this calculator, goodbye :)")
 
