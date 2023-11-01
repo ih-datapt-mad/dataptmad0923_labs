@@ -1,4 +1,4 @@
-""".Hola.
+"""
 This is a dumb calculator that can add and subtract whole numbers from zero to five.
 When you run the code, you are prompted to enter two numbers (in the form of English
 word instead of number) and the operator sign (also in the form of English word).
@@ -11,10 +11,33 @@ code simplicity and efficiency.
 
 print('Welcome to this calculator!')
 print('It can add and subtract whole numbers from zero to five')
-a = input('Please choose your first number (zero to five): ')
-b = input('What do you want to do? plus or minus: ')
-c = input('Please choose your second number (zero to five): ')
+#Utilizamos un try/except por si el usuario mete un string y le pedimos en el except que meta un numero.
+try:
+    #num1 convierte el numero del usuario a float
+    num1 = float(input('Please choose your first number: '))
+    # Definimos el operador de la calculadora
+    operador = input('What do you want to do? plus (+), subtract (-): ')
+    #num2 convierte el numero del usuario a float
+    num2 = float(input('Please choose your second number: '))
 
+    if operador == 'plus' or '+':
+        solution = num1 + num2
+        #Si el operador es +, suma num1 y num2
+    elif operador == 'subtract' or '-':
+        solution = num1 - num2
+        #Si el operador es -, resta num1 y num2
+    else:
+        print("I am not able to answer this question. Check your input.")
+    print('The result is', solution)
+    #impirme la solucion
+    print("Thanks for using this calculator, goodbye :)")
+except ValueError:
+    print("Please enter a number. Ex: 2")
+except:
+    print("Please check your input")
+
+
+'''
 if a == 'zero' and b == 'plus'  and c == 'zero':
     print("zero plus zero equals zero")
 if a == 'zero' and b == 'plus'  and c == 'one':
@@ -167,3 +190,4 @@ if (not a == 'zero' and not a == 'one' and not a == 'two' and not a == 'three' a
     print("I am not able to answer this question. Check your input.")
 
 print("Thanks for using this calculator, goodbye :)")
+'''
