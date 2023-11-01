@@ -11,20 +11,27 @@ For example, if you are given the number 15, there are 3 possibilities to compos
 The following function shows one way to solve the problem but the code is not ideal or efficient.
 Refactor the code based on what you have learned about code simplicity and efficiency.
 """
+import math
+from os import system
 
-def my_function(X):
-    solutions = []
-    for x in range(5, X):
-        for y in range(4, X):
-            for z in range(3, X):
-                if (x*x==y*y+z*z):
-                    solutions.append([x, y, z])
-    m = 0
-    for solution in solutions:
-        if m < max(solution):
-            m = max(solution)
-    return m
+def hypotenuse(cat_a, cat_b):
+    return math.sqrt(cat_a ** 2 + cat_b ** 2)
 
-X = input("What is the maximal length of the triangle side? Enter a number: ")
+def right_triangle(max_length):
+    length_counter = 0
+    triangles = []
 
-print("The longest side possible is " + str(my_function(int(X))))
+    for cat_a in range(3, max_length):
+        for cat_b in range(cat_a, max_length):
+            h = hypotenuse(cat_a, cat_b)
+            if h.is_integer() and h > length_counter:
+                length_counter = int(h)
+                triangles.append((cat_a, cat_b, length_counter))                
+
+    return triangles
+
+while True:
+    system("cls")
+    max_length = int(input("What is the maximal length of the triangle side? Enter a number: "))
+    print("The longest side possible is " + str(right_triangle(max_length)))
+    input('To continue, press enter')
