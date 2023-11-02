@@ -9,12 +9,61 @@ The code is very long and messy. Refactor it according to what you have learned 
 code simplicity and efficiency.
 """
 
-print(' Welcome to this calculator!')
+############ MY SOLUTION ############
+print('\n Welcome to this calculator!')
 print('It can add and subtract whole numbers from zero to five')
 a = input('Please choose your first number (zero to five): ')
 b = input('What do you want to do? plus or minus: ')
 c = input('Please choose your second number (zero to five): ')
 
+# In case the input or any character in the string is in upper case, convert it to lower case. That this way, it's possible to
+# introduce diferent characters.
+a = a.lower()
+b = b.lower()
+c = c.lower()
+
+# Create a dictionary with the correspondence between a number expressed in characters (e.g. one) or in numerical form (e.g. 1). In 
+# this dictionary includes the characers 'one' and '1', that this way it's possible to write in the input that two ways
+numbers = {'zero': 0,   '0': 0,
+           'one': 1,    '1': 1,
+           'two': 2,    '2': 2,   
+           'three': 3,  '3': 3,   
+           'four': 4,   '4': 4,   
+           'five': 5,   '5': 5,
+           'plus': '+', 'minus': '-'}
+
+# Create another dictionary to print the solution as in the initial program. If the input number is '1', the result will be 'one' or if 
+# it's '+' the result will be 'plus'.
+response = {'0': 'zero', '1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five', '6': 'six', '7': 'seven', '8': 'eight', '9': 'nine', '10': 'ten',
+            '+': 'plus', '-': 'minus', 'plus': 'plus', 'minus': 'minus'}
+
+# Check if 'a' and 'c' are inside the numbers. If it's 'True' accesses  to the loop, but if 'False' the input is wrong.
+if (a in numbers) and (c in numbers):
+
+    # Check if 'b' is plus/+/minus/- to make the sum/subtraction. Calculate the operation with two numbers. To do this, search in the 
+    # dictionary 'numbers' the corresponding integer to make the operation. Finally, print the operation result. Search in the dictionary
+    # 'response' the corresponding integer to perform the operation. In this way the result will be the same as the initial solution.
+    if (b == 'plus') or (b == '+'):
+        result = numbers[a] + numbers[c]
+        print(f"{response[str(a)]} {response[str(b)]} {response[str(c)]} equals {response[str(result)]}")
+    elif (b == 'minus') or (b == '-'):
+        result = numbers[a] - numbers[c]
+        if result < 0:
+            neg_number = ' minus '
+        else:
+            neg_number = ''
+        print(f"{response[str(a)]} {response[str(b)]} {response[str(c)]} equals {neg_number} {response[str(result)]}")
+    else:
+         print("I am not able to answer this question. Check your input. The input 'b' is incorrect")
+
+else:
+     print("I am not able to answer this question. Check your input. The inputs 'a' or 'c' are incorrect")
+
+print("Thanks for using this calculator, goodbye :)\n")
+
+
+'''
+############ INITIAL SOLUTION ############
 if a == 'zero' and b == 'plus'  and c == 'zero':
     print("zero plus zero equals zero")
 if a == 'zero' and b == 'plus'  and c == 'one':
@@ -167,3 +216,4 @@ if (not a == 'zero' and not a == 'one' and not a == 'two' and not a == 'three' a
     print("I am not able to answer this question. Check your input.")
 
 print("Thanks for using this calculator, goodbye :)")
+'''
