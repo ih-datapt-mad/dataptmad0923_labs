@@ -6,7 +6,7 @@ The code will perform the calculation and give the result if your input is what 
 expects.
 
 The code is very long and messy. Refactor it according to what you have learned about
-code simplicity and efficiency.
+code simplicity and efficiency.lllll
 """
 
 print('Welcome to this calculator!')
