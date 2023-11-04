@@ -10,28 +10,21 @@ import random
 import string
 import sys
 
-def random_string(l = 12, letters = string.ascii_lowercase + string.digits):
+def random_string(l, letters = string.ascii_lowercase + string.digits):
     return ''.join(random.choice(letters)for x in range(l))
 
-def BatchStringGenerator(n, a=8, b=12):
-    r = []
-    for i in range(n):
-        c = None
-        if a < b:
-            import random
-            c = random.choice(range(a, b))
-        elif a == b:
-            c = a
-        else:
-            sys.exit('Incorrect min and max string lengths. Try again.')
-        r.append(random_string(c))
-    return r
-a = input('Enter minimum string length: ')
-b = input('Enter maximum string length: ')
-n = input('How many random strings to generate? ')
+def BatchStringGenerator(n, a, b):
+    if a < b and a == b:
+        return [random_string(random.choice(range(a,b)))for x in range(n)]
+    else:
+        print('Changes your the numbers plis')    
     
+a = int(input('Enter minimum string length: '))
+b = int(input('Enter maximum string length: '))
+n = int(input('How many random strings to generate? '))
+    
+print(BatchStringGenerator(n,a,b))
 
-print(BatchStringGenerator(int(n), int(a), int(b)))
 '''
 def RandomStringGenerator(l=12, a=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9']):
     p = 0
