@@ -11,10 +11,34 @@ code simplicity and efficiency.
 
 print('Welcome to this calculator!')
 print('It can add and subtract whole numbers from zero to five')
-a = input('Please choose your first number (zero to five): ')
-print(f"Ejemplo de print para hacer la pull request")
+# Obligar al usuario a escoger un caracter numérico y pasarlo como int
+a = int(input('Please choose your first number (0 to 5): '))
 b = input('What do you want to do? plus or minus: ')
-c = input('Please choose your second number (zero to five): ')
+c = int(input('Please choose your second number (0 to 5): '))
+
+
+# Condiciones sobre la operación matemática 
+
+# Primera condición, si el usuario escoge suma, el resultado es una suma de las variables a y c
+if b == 'plus':      
+    print(f'{a} plus {c} equals {a+c}')
+# Segunda condición, si el usuario escoge resta, el resultado es una resta de las variables a y c
+elif b == 'plus':
+    print(f'{a} minus {c} equals {a-c}')
+# Tercera condición, si el usuario escoge multiplicación o división, vete a otra calculador
+elif b == 'multiply' or b == 'division':
+    print(f'Please, choose between "plus" or "minus". To do the {b} operation, run calculator 2.0')
+# Cuarta condición, si el usuario puso en b cualquier tema, hay un error.
+else: 
+    print(f'Ups, something wrong. Please, choose between "plus" or "minus". Check your input :)')
+
+
+# Condiciones sobre los inputs del usuario 
+# Si a o c están por debajo de cero, no se ejecuta
+if (a < 0) or (a > 5) or (c < 0) or (c > 5):
+    print(f'Please, check your numbers. It must be between 0 to 5')
+
+"""
 
 if a == 'zero' and b == 'plus'  and c == 'zero':
     print("zero plus zero equals zero")
@@ -166,5 +190,7 @@ if a == 'five' and b == 'minus' and c == 'five':
 
 if (not a == 'zero' and not a == 'one' and not a == 'two' and not a == 'three' and not a == 'four' and not a == 'five') or (not c == 'zero' and not c == 'one' and not c == 'two' and not c == 'three' and not c == 'four' and not c == 'five') or (not b == 'plus' and not b == 'minus'):
     print("I am not able to answer this question. Check your input.")
+
+""" 
 
 print("Thanks for using this calculator, goodbye :)")
