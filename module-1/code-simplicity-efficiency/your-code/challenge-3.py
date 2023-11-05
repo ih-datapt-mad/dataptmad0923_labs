@@ -7,7 +7,7 @@ For example, if you are given the number 15, there are 3 possibilities to compos
 1. [3, 4, 5]
 2. [6, 8, 10]
 3. [5, 12, 13]
-
+.
 The following function shows one way to solve the problem but the code is not ideal or efficient.
 Refactor the code based on what you have learned about code simplicity and efficiency.
 """
