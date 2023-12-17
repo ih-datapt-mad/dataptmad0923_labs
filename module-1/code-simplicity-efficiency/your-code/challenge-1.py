@@ -9,36 +9,50 @@ The code is very long and messy. Refactor it according to what you have learned 
 code simplicity and efficiency.
 """
 
+# SOLUCIÓN MODIFICADA
+
 print('Welcome to this calculator!')
-print('It can add and subtract whole numbers from zero to five')
-a = input('Please choose your first number (zero to five): ')
-print(f"Aquí coge la variable a: {a}")
+print('It can add and subtract whole numbers from 0 to 5')
+
+# El usuario debe escoger dos valores a,c numérico entre 0 y 5 además del valor de la operación b entre suma o resta
+
+a = input('Please choose your first number (0 to 5): ')
 b = input('What do you want to do? plus or minus: ')
-print(f"Aquí coge la variable operador: {b}")
-c = input('Please choose your second number (zero to five): ')
-print(f"Aquí coge la variable a: {c}")
+c = input('Please choose your second number (0 to 5): ')
 
-numeros_dict = { 0:'zero', 1:'one', 2:'two', 3:'three', 4:'four' }
+# Primero, haremos al usuario escoger la operación que quiere realizar
 
-numeros_dict = { 'zero':0, 'one':1, 'two':2, 'three':3 , 'four':4 }
-string_dict = { 0:'zero', 1:'one', 2:'two', 3:'three' , 4:'four'}
+if b == 'plus':
+   print(f'{a} plus {c} equals {a+c}')
 
-if a in numeros_dict.keys() and c in numeros_dict.keys():
-    if b == 'plus':
-        d = numeros_dict[a] + numeros_dict[c]
-        e = string_dict[d]
-        print(f"{a} {b} {c} is equal to {e}")
-    elif b == 'minus':
-        d = numeros_dict[a] - numeros_dict[c]
-        e = string_dict[d]
-        print(f"{a} {b} {c} is equal to {e}")
+elif b == 'minus':
+   print(f'{a} plus {c} equals {a-c}')
+
 else:
-     print("I am not able to answer this question. Check your input.")
-        
+    print("I am not able to answer this question. Check your input and choose again between plus or minus.")
+
+# Segundo, escoger los valores para la operación escogida
+
+# Si a o c están por debajo de cero o por encima de 5 no puede realizar la operación. Añadimos esta condición:
+
+if (a < 0) or (a > 5) or (c < 0) or (c > 5):
+    print("Please, you are not choosing a number from the interval [0,5]")
+
 print("Thanks for using this calculator, goodbye :)")
 
 
-"""if a == 'zero' and b == 'plus'  and c == 'zero':
+
+
+# SOLUCIÓN INICIAL
+
+"""
+print('Welcome to this calculator!')
+print('It can add and subtract whole numbers from zero to five')
+a = input('Please choose your first number (zero to five): ')
+b = input('What do you want to do? plus or minus: ')
+c = input('Please choose your second number (zero to five): ')
+
+if a == 'zero' and b == 'plus'  and c == 'zero':
     print("zero plus zero equals zero")
 if a == 'zero' and b == 'plus'  and c == 'one':
     print("zero plus one equals one")
@@ -189,4 +203,6 @@ if a == 'five' and b == 'minus' and c == 'five':
 if (not a == 'zero' and not a == 'one' and not a == 'two' and not a == 'three' and not a == 'four' and not a == 'five') or (not c == 'zero' and not c == 'one' and not c == 'two' and not c == 'three' and not c == 'four' and not c == 'five') or (not b == 'plus' and not b == 'minus'):
     print("I am not able to answer this question. Check your input.")
 
-print("Thanks for using this calculator, goodbye :)")"""
+print("Thanks for using this calculator, goodbye :)")
+
+"""

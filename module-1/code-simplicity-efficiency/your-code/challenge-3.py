@@ -11,29 +11,30 @@ For example, if you are given the number 15, there are 3 possibilities to compos
 The following function shows one way to solve the problem but the code is not ideal or efficient.
 Refactor the code based on what you have learned about code simplicity and efficiency.
 """
-import math
+# SOLUCIÓN MODIFICADA
 
-def hypotenuse(cat_a,cat_b):
-    return math.sqrt(cat_a ** 2 + cat_b ** 2)
+def longest_side(X):    
+    solutions = []     
+    for x in range(5, X):            
+        for y in range(4, X):
+            for z in range(3, X):
+                if x*x == y*y + z*z:     
+                    solutions.append([x, y, z])
+    m = 0
+    for solution in solutions:
+        if m < max(solution):
+            m = max(solution)
+    return m
 
-def right_triangle(max_length):
-    length_counter = 0
-    triangles = []
+X = input("What is the maximal length of the triangle side? Enter a number: ")
 
-    for cat_a in range(1, max_length):
-        for cat_b in range(cat_a, max_length):
-            h = hypotenuse(cat_a,cat_b)
-            if h.is_integer() and h > length_counter:
-                length_counter = int(h)
-                triangles.append((cat_a, cat_b, length_counter))
-    return triangles
-
-while True:
-    max_length = int(input("What is the maximal length of the triangle side? Enter a number: "))
-    print("The longest side possible is " + str(right_triangle(max_length)) )
+print(f'The longest side possible is {str(longest_side(int(X)))}')
 
 
-"""def my_function(X):
+#SOLUCIÓN INICIAL
+
+"""
+def my_function(X):
     solutions = []
     for x in range(5, X):
         for y in range(4, X):
@@ -48,4 +49,5 @@ while True:
 
 X = input("What is the maximal length of the triangle side? Enter a number: ")
 
-print("The longest side possible is " + str(my_function(int(X))))"""
+print("The longest side possible is " + str(my_function(int(X))))
+"""
