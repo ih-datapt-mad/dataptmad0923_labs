@@ -33,14 +33,6 @@ Use pen and paper to create the design, take a picture with your phone and send 
 
 1. **Create a MySQL database for this lab.** You can do so in the command line like this:
 
-	```bash
-	$ mysql -u your_username -p
-	mysql> CREATE DATABASE lab_mysql;
-	Query OK, 1 row affected (0.02 sec)
-	mysql> USE lab_mysql;
-	Database changed
-	```
-
 	*Note: If you have set a password for the database user, you need to supply `-p` in the MySQL connection command. Once you hit enter, MySQL will ask you to type the password. If you didn't set the password for the database user, you don't need to supply `-p` in the connection command.*
 
 1. **Now, based on the database design you created, write the SQL query to create the tables and columns.** You will be using the `CREATE TABLE` statement for which you can find reference [here](https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html).
