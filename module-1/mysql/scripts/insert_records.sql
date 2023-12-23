@@ -29,4 +29,4 @@ INSERT INTO Invoices (ID, "Invoice Number", "Date", Car, Customer, "Sales Person
 VALUES (0, '852399038', '20180822', 0, 1, 3)
 ,(1, '731166526', '20181231', 3, 0, 5)
 ,(2, '271135104', '20190122', 2, 2, 7);
-[16/12, 12:00] Carlos Sacristan: UPDATE SalesPersons SET Store = 'Miami' WHERE ID = 4;
+UPDATE SalesPersons SET Store = 'Miami' WHERE ID = 4;
