@@ -42,8 +42,8 @@ LEFT JOIN (
     SELECT
         ta.au_id,
         ta.title_id,
-        SUM(t.price * s.qty * t.royalty / 100 * ta.royaltyper / 100 +
-            t.advance * ta.royaltyper / 100) AS total_royalty_advance
+        (t.price * s.qty * t.royalty / 100 * ta.royaltyper / 100) +
+            (t.advance * ta.royaltyper / 100) AS total_royalty_advance
     FROM
         titleauthor ta
     JOIN
@@ -51,7 +51,7 @@ LEFT JOIN (
     JOIN
         sales s ON t.title_id = s.title_id
     GROUP BY
-        ta.au_id, ta.title_id
+        ta.au_id, ta.title_id, total_royalty_advance
 ) AS subquery ON a.au_id = subquery.au_id
 GROUP BY
     a.au_id
@@ -105,8 +105,8 @@ FROM
     (SELECT 
         ta.title_id AS TITLE_ID,
         a.au_id AS AUTHOR_ID,
-        SUM(t.price * s.qty * t.royalty / 100 * ta.royaltyper / 100 +
-            t.advance * ta.royaltyper / 100) AS TOTAL_PROFITS
+        (t.price * s.qty * t.royalty / 100 * ta.royaltyper / 100) +
+            (t.advance * ta.royaltyper / 100) AS TOTAL_PROFITS
     FROM
         titleauthor ta 
     JOIN 
@@ -116,7 +116,7 @@ FROM
     JOIN
         sales s ON t.title_id = s.title_id
     GROUP BY 
-        AUTHOR_ID, TITLE_ID) dt
+        AUTHOR_ID, TITLE_ID,TOTAL_PROFITS) dt
 GROUP BY
     AUTHOR_ID
 ORDER BY
@@ -140,8 +140,8 @@ FROM
     (SELECT 
         ta.title_id AS TITLE_ID,
         a.au_id AS AUTHOR_ID,
-        SUM(t.price * s.qty * t.royalty / 100 * ta.royaltyper / 100 +
-            t.advance * ta.royaltyper / 100) AS TOTAL_PROFITS
+        SUM(t.price * s.qty * t.royalty / 100 * ta.royaltyper / 100) +
+            (t.advance * ta.royaltyper / 100) AS TOTAL_PROFITS
     FROM
         titleauthor ta 
     JOIN 
