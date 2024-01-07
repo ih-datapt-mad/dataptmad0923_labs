@@ -26,7 +26,7 @@ FROM
     INNER JOIN publishers AS pu ON ti.pub_id = pu.pub_id
 GROUP BY au.au_id
 ORDER BY 5 DESC
-
+__________________________________________________________
 --Challenge 3 - Best Selling Authors
 SELECT
     au.au_id AS 'AUTHOR ID', 
@@ -41,7 +41,7 @@ FROM
 GROUP BY au.au_id
 ORDER BY 4 DESC
 LIMIT 3
-
+__________________________________________________________
 --Challenge 4 - Best Selling Authors Ranking
 SELECT
     au.au_id AS 'AUTHOR ID', 
