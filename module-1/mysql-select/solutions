@@ -1,4 +1,6 @@
---Challenge 1 - Who Have Published What At Where?
+--LAB MYSQL SELECT
+
+--Challenge 1 
 
 SELECT 
     au.au_id AS 'AUTHOR ID', 
@@ -12,7 +14,7 @@ FROM
     INNER JOIN titles AS ti ON ta.title_id = ti.title_id 
     INNER JOIN publishers AS pu ON ti.pub_id = pu.pub_id 
 
---Challenge 2 - Who Have Published How Many At Where?    
+--Challenge 2 
 SELECT 
     au.au_id AS 'AUTHOR ID', 
     au.au_lname AS 'LAST NAME', 
@@ -25,9 +27,8 @@ FROM
     INNER JOIN titles AS ti ON ta.title_id = ti.title_id 
     INNER JOIN publishers AS pu ON ti.pub_id = pu.pub_id
 GROUP BY au.au_id
-ORDER BY 5 DESC
-__________________________________________________________
---Challenge 3 - Best Selling Authors
+
+--Challenge 3 
 SELECT
     au.au_id AS 'AUTHOR ID', 
     au.au_lname AS 'LAST NAME', 
@@ -39,9 +40,7 @@ FROM
     INNER JOIN titles AS ti ON ta.title_id = ti.title_id 
     INNER JOIN sales AS sa ON sa.title_id = ti.title_id
 GROUP BY au.au_id
-ORDER BY 4 DESC
-LIMIT 3
-__________________________________________________________
+
 --Challenge 4 - Best Selling Authors Ranking
 SELECT
     au.au_id AS 'AUTHOR ID', 
