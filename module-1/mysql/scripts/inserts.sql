@@ -35,3 +35,28 @@ UPDATE Customers SET Email = 'ppicaso@gmail.com' WHERE Name = 'Pablo Picasso';
 UPDATE Customers SET Email = 'lincoln@us.gob' WHERE Name = 'Abraham Lincoln';
 UPDATE Customers SET Email = 'hello@napoleon.me' WHERE Name = 'Napoléon Bonaparte';
 DELETE FROM Cars WHERE ID = 4;
+
+-- UPDATE TABLES
+UPDATE SalesPersons SET Store = 'Miami' WHERE ID = 4;
+UPDATE Customers SET Email = 'ppicaso@gmail.com' WHERE Name = 'Pablo Picasso';
+UPDATE Customers SET Email = 'lincoln@us.gob' WHERE Name = 'Abraham Lincoln';
+UPDATE Customers SET Email = 'hello@napoleon.me' WHERE Name = 'Napoléon Bonaparte';
+DELETE FROM Cars WHERE ID = 4;
+
+
+
+-- CHECK CREATE TABLES
+SELECT *
+FROM Cars c;   -- c es un alias de la tabla. Puede ponerse 'Cars as c', o sin el 'as'
+
+SELECT count(*) as cnt   -- contar el número de registros que tiene 
+FROM Cars as c;
+
+SELECT *   -- contar el número de registros que tiene 
+FROM Customers as cus;
+
+SELECT *   -- contar el número de registros que tiene 
+FROM SalesPersons as s;
+
+SELECT *   -- contar el número de registros que tiene 
+FROM Invoices as inv;
