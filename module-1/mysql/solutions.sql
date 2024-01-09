@@ -1,4 +1,5 @@
 -- Challenge 1 & 2--
+
 CREATE TABLE Cars
 (
 	ID INT NOT NULL
